@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StringFormalization</title>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <style>
+        .main{
+            position: absolute;
+            left: 200px;
+            top: 100px;
+
+        }
+    </style>
+
+</head>
+<body>
+<div class="main">
+    <textarea id="input" rows="10" cols="50" placeholder="Please Enter..."
+              style="font-size:16px;font-family:Arial;font-weight:bold;"></textarea>
+
+    <button onclick="Formalize()">转换</button>
+
+    <textarea id="output" rows="10" cols="50" placeholder="Result..."
+              style="font-size:16px;font-family:Arial;font-weight:bold;"></textarea>
+
+</div>
+
+
+
+<script>
+
+    function Formalize(){
+        var text = document.getElementById('input').value.replace(/，/ig,'","');
+        var newtext = '"' + text + '"';
+
+        document.getElementById('output').value = newtext;
+    }
+
+
+
+</script>
+</body>
+</html>
