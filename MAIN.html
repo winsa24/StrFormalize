@@ -15,6 +15,7 @@
 
 </head>
 <body>
+
 <div class="main">
     <textarea id="input" rows="10" cols="50" placeholder="Please Enter..."
               style="font-size:16px;font-family:Arial;font-weight:bold;"></textarea>
@@ -29,14 +30,28 @@
 
 
 <script>
+    // 中文逗号转英文，并在最外部加双引号
+    // function Formalize(){
+    //     var text = document.getElementById('input').value.replace(/，/ig,'","');
+    //     var newtext = '"' + text + '"';
+    //
+    //     document.getElementById('output').value = newtext;
+    // }
 
+    //以空格分割，每个字符加双引号并用逗号隔开
     function Formalize(){
-        var text = document.getElementById('input').value.replace(/，/ig,'","');
-        var newtext = '"' + text + '"';
+        let text = document.getElementById('input').value.trim().split(/\s+/);
+        alert(text[0]);
+        let len = text.length;
+        alert(len);
+        var newtext= "";
+        for(var i = 0; i < len; i ++){
+            newtext = newtext + '"' + text[i] + '",' ;
+        }
+
 
         document.getElementById('output').value = newtext;
     }
-
 
 
 </script>
